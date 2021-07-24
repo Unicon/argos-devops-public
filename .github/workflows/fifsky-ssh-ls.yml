@@ -1,0 +1,27 @@
+# Adding comment to try to trigger again 
+# now that script has been pushed to origin
+
+name: test-fifsky-ssh-action
+on:
+  push:
+    branches:
+    - main
+
+env:
+  FIRST_NAME: Franz
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls -a via OPEN SSH Private Key
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd /tmp
+            ls -a
+            echo "env_var:$FIRST_NAME"
+            exit 1
+          host: 44.226.221.126
+          user: ec2-user
+          key: ${{ secrets.ARGOS_NONPROD_PRIVATE_KEY}}
+          args: "-tt -vvv"
