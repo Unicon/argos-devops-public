@@ -27,3 +27,5 @@ jobs:
           user: ec2-user
           key: ${{ secrets.ARGOS_NONPROD_PRIVATE_KEY }}
           # args: "-tt -vvv"
+          env:
+            FIRST_NAME: Franz
