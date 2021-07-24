@@ -1,6 +1,7 @@
 # Adding comment to try to trigger again 
 # now that script has been pushed to origin
 # 
+#
 
 name: test-fifsky-ssh-action
 on:
