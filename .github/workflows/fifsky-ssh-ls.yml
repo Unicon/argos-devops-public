@@ -9,10 +9,10 @@ on:
     branches:
     - main
 
-env:
-  FIRST_NAME: Franz
 jobs:
   build:
+    env:
+      FIRST_NAME: Franz
     runs-on: ubuntu-latest
     steps:
       - name: ls -a via OPEN SSH Private Key
