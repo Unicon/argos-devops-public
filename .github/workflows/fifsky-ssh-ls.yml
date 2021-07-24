@@ -16,16 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ls -a via OPEN SSH Private Key
+        env:
+          lala: Franz
         uses: fifsky/ssh-action@master
         with:
           command: |
             cd /tmp
             ls -a
-            echo "env_var: $FIRST_NAME"
+            echo "env_var: $lala"
             # exit 1
           host: 44.226.221.161
           user: ec2-user
           key: ${{ secrets.ARGOS_NONPROD_PRIVATE_KEY }}
           # args: "-tt -vvv"
-          env:
-            FIRST_NAME: Franz
